@@ -74,7 +74,9 @@ header {
 	margin-top: 30px;
 	margin-right: 30px;
 }
-
+.base {
+	margin-top:397px;
+}
 .where {
 	color: #ffffff;
 	font-size: 60px;
@@ -90,17 +92,16 @@ header {
 	font-size: 25px;
  	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	src: url(helveticaneuecyr-light.otf);
-	text-align: center;
-	margin-top: -63px;
+	position:absolute;
+	top: 250px;
+	left: 455px;
 }
-
 
 
 .rectangle {
 	width: auto;
    	height: 220px;
    	background: #209b23;
-	margin-top: 94px;
 	opacity: 0.5;
 	position: relative;
 }
@@ -111,4 +112,25 @@ header {
 	background: #ffffff;
 	margin-top: -130px;
 	position: absolute;
+}
+
+.words {
+	width: 960px;
+	height: 48px;
+	margin-top: -80px;
+	position: absolute;
+}
+
+.words ul {
+	padding-left: 80px;
+	overflow: hidden;
+}
+
+.words ul li {
+	float: left;
+	font-size: 13px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	src: url(helveticaneuecyr-light.otf);
+	margin-right: 22px;
+	color: white;
 }
