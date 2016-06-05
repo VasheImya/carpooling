@@ -74,17 +74,13 @@ header {
 	margin-top: 30px;
 	margin-right: 30px;
 }
-.base {
-	margin-top:397px;
-}
 .where {
 	color: #ffffff;
 	font-size: 60px;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	src: url(helveticaneuecyr-light.otf);
-	position: absolute;
-	top: 148px;
-	left: 500px;
+	text-align:  center;
+	padding-top: 148px;
 }
 
 .place {
@@ -92,12 +88,14 @@ header {
 	font-size: 25px;
  	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	src: url(helveticaneuecyr-light.otf);
-	position:absolute;
-	top: 250px;
-	left: 455px;
+	text-align:  center;
+	margin-top: -50px;
 }
 
 
+.footer {
+	margin-top: 81px;
+}
 .rectangle {
 	width: auto;
    	height: 220px;
@@ -119,6 +117,7 @@ header {
 	height: 48px;
 	margin-top: -80px;
 	position: absolute;
+	list-style-type: none;
 }
 
 .words ul {
@@ -127,6 +126,28 @@ header {
 }
 
 .words ul li {
+	float: left;
+	font-size: 13px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	src: url(helveticaneuecyr-light.otf);
+	margin-right: 22px;
+	color: white;
+}
+
+.numbers {
+	width: 960px;
+	height: 48px;
+	margin-top: -100px;
+	position: absolute;
+	list-style-type: none;
+}
+
+.numbers ul {
+	padding-left: 80px;
+	overflow: hidden;
+}
+
+.numbers ul li {
 	float: left;
 	font-size: 13px;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
