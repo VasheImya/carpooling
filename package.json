@@ -1,23 +1,44 @@
 {
   "name": "carpooling",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Carpooling webapp",
   "main": "index.js",
-  "dependencies": {
-    "app-reset": "^1.0.2"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VasheImya/carpooling.git"
+    "url": "git+https://github.com/vasheimya/carpooling.git"
   },
+  "keywords": [
+    "Carpooling"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/VasheImya/carpooling/issues"
+    "url": "https://github.com/vasheimya/carpooling/issues"
   },
-  "homepage": "https://github.com/VasheImya/carpooling#readme"
+  "homepage": "https://github.com/vasheimya/carpooling#readme",
+  "dependencies": {
+    "app-reset": "^1.0.2",
+    "axios": "^0.5.4",
+    "express": "^4.13.4",
+    "immutable": "^3.8.1",
+    "object-assign": "^4.1.0",
+    "react": "^15.1.0",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.4.1",
+    "redux": "3.5.2"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.9.1",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.4",
+    "eslint": "^2.11.1",
+    "eslint-plugin-react": "^5.1.1",
+    "react-hot-loader": "git@github.com:gaearon/react-hot-loader.git#next",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
 }
