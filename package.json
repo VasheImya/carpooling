@@ -4,7 +4,8 @@
   "description": "Carpooling webapp",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "start": "NODE_PATH=$NODE_PATH:./shared node .",
+    "dev": "npm run start & webpack-dev-server --progress --color"
   },
   "repository": {
     "type": "git",
