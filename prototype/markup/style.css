@@ -8,10 +8,32 @@ html, body {
 body {
     margin: 0;
     padding: 0;
-    background: #333;
+    background: url("./images/background.png") #000 no-repeat center;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 13px;
     color: #fff;
+    position: relative;
+}
+
+body:before {
+    content: '';
+    position: absolute;
+    width: calc(50% - 620px);
+    height: 100%;
+    background: #000;
+    box-shadow: 0px 0px 150px 150px rgba(0, 0, 0, 1);
+    left: 0;
+    top: 0;
+}
+body:after {
+    right: 0;
+    top: 0;
+    content: '';
+    position: absolute;
+    width: calc(50% - 620px);
+    height: 100%;
+    background: #000;
+    box-shadow: 0px 0px 150px 150px rgba(0, 0, 0, 1);
 }
 
 ul, li {
@@ -25,6 +47,13 @@ a, a:visited, a:active, a:hover {
 }
 a:hover {
     color: #d00;
+}
+
+.main {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
 }
 
 .wrapper {
@@ -291,6 +320,19 @@ a:hover {
 .promo__inner {
     position: relative;
     top: calc(50% - 80px);
+}
+
+.promo__inner:before {
+    content: "";
+    display: block;
+    box-shadow: 0 0 100px 20px rgba(0,0,0,0.65);
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+
+.promo__inner > * {
+    position: relative;
 }
 
 .promo__big-text {
