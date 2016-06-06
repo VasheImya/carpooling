@@ -7,63 +7,41 @@
         <link href="style.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
-        <div class="wrapper">
-            <div class="header">
-                <div class="header_value_wight-height">
-                    <div class="header__logo">
-                        <div class="header__logo_value-location">
-                            <a href="main.html"><img src="images/logo.png" alt="Logo"/></a>
-                        </div>
-                    </div>
+        <div class="header">
+            <div class="header__logo">
+                <a href="#" class="logo"></a>
+            </div>
+            <span class="header__menu-item"><a href="#">Самое интересное</a></span>
+            <div class="header__side">
+                <ul class="header__menu">
+                    <li class="header__menu-item"><a href="#">Сообщения</a></li>
+                    <li class="header__menu-item"><a href="#">Мои поездки</a></li>
+                    <li class="header__menu-item"><a href="#">Помощь</a></li>
+                </ul>
                 <div class="header__profile">
-                    <div class="header__profile_value-location-background">
-                        <a href="#"><img src="images/avatar.png" alt="Ava" /></a>
-                    </div>
-                </div>
-                <div class="header__interesting">
-                    <div class="header__interesting_value-location">
-                        <a href="#">Самые интересные</a>
-                    </div>
-                </div>
-                <div class="header__menu">
-                    <div class="header__menu_value-location">
-                        <ul>
-                            <li><a href="#">Сообщения</a></li>
-                             <li><a href="#">Мои поездки</a></li>
-                            <li><a href="#">Помощь</a></li>
-                        </ul>
-                    </div>
-                </div>
+                    <span class="header__avatar"></span>
                 </div>
             </div>
-            <div class="base">
-                <div class="where">
-                    <p>Куда едем?</p>
-                    <div class="place">
-                        <p>Сотни интересных мест ждут тебя</p>
+        </div>
+        <div class="promo wrapper">
+            <div class="promo__inner">
+                <div class="promo__big-text">Куда едем?</div>
+                <div class="promo__small-text">Сотни интересных мест ждут тебя</div>
+            </div>
+        </div>
+        <div class="trip-search">
+            <div class="trip-search__inner wrapper">
+                <div class="trip-search__form"></div>
+                <div class="spinner trip-search__spinner">
+                    <div class="spinner__element">
+                        <i class="spinner__dot"></i><i class="spinner__dot"></i><i class="spinner__dot"></i><i class="spinner__dot"></i><i class="spinner__dot"></i>
                     </div>
                 </div>
-            </div>
-            <div class="footer">
-                <div class="rectangle"></div>
-                <div class="rectangle_circles"></div>
-                <div class="information">
-                    <div class="numbers">
-                        <ul>
-                            <li>5</li>
-                            <li>23</li>
-                            <li>40$</li>
-                            <li>4+</li>
-                        </ul>
+                <div class="trip-search__data">
+                    <div class="stats trip-search__stats">
+
                     </div>
-                    <div class="words">
-                        <ul>
-                            <li>водителей</li>
-                            <li>похожих<br>направления</li>
-                            <li>средняя<br>стоимость</li>
-                            <li>комфорт</li>
-                        </ul>
-                    </div>
+                    <button class="trip-search__go-btn">Поехали!</button>
                 </div>
             </div>
         </div>
