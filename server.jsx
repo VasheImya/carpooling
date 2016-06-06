@@ -1,17 +1,19 @@
-import express                   from 'express';
-import React                     from 'react';
-import { renderToString }        from 'react-dom/server';
-import { RoutingContext, match } from 'react-router';
-import createLocation            from 'history/lib/createLocation';
-import routes                    from 'routes';
-import { Provider }              from 'react-redux';
-import * as reducers             from 'reducers';
-import promiseMiddleware         from './src/shared/lib/promiseMiddleware';
-import fetchComponentData        from './src/shared/lib/fetchComponentData';
+import _                          from 'lodash';
+import express                    from 'express';
+import React                      from 'react';
+import { renderToString }         from 'react-dom/server';
+import { RoutingContext, match }  from 'react-router';
+import createLocation             from 'history/lib/createLocation';
+import routes                     from 'routes';
+import { Provider }               from 'react-redux';
+import * as reducers              from 'reducers';
+import promiseMiddleware          from './src/shared/lib/promiseMiddleware';
+import fetchComponentData         from './src/shared/lib/fetchComponentData';
 import { createStore,
          combineReducers,
-         applyMiddleware }       from 'redux';
-import path                      from 'path';
+         applyMiddleware }        from 'redux';
+import path                       from 'path';
+import * as appRoutesInitializers from './src/server/routes';
 
 const app = express();
 
@@ -73,5 +75,7 @@ app.use((req, res) => {
             .catch(err => res.end(err.message));
     });
 });
+
+_.forEach(appRoutesInitializers, route => (_.isFunction(route) && route(app) || null));
 
 export default app;
