@@ -178,12 +178,12 @@ a:hover {
 }
 
 .spinner__dot {
-    width: 10px;
-    height: 10px;
+    width: 6px;
+    height: 6px;
     display: inline-block;
     opacity: 1;
     background: #fff;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 .spinner__dot + .spinner__dot {
@@ -223,7 +223,7 @@ a:hover {
 
 @keyframes dot1 {
     0% { opacity:1; }
-    45% {opacity:0.1}
+    55% {opacity:0.1}
     100% { opacity:1; }
 }
 @keyframes dot2 {
@@ -252,7 +252,7 @@ a:hover {
 
 @-webkit-keyframes dot1 {
     0% { opacity:1; }
-    45% {opacity:0.1}
+    55% {opacity:0.1}
     100% { opacity:1; }
 }
 @-webkit-keyframes dot2 {
