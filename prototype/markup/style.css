@@ -350,47 +350,23 @@ a:hover {
 
 /** BEGIN .stats **/
 
-.stats {
+.stats__value {
     display: inline-block;
     vertical-align: top;
+    margin-right: 30px;
 }
 
-.stats__driver_number {
+.stats__value_number {
     font-size: 36px;
 }
 
-.stats__driver_text {
+.stats__value_text {
     font-size: 12px;
 }
 
-.stats__similar-route_number {
-    font-size: 36px;
-}
+.stats__value_symbol {
+    font-size: 25px;
+    margin-left: 40px;
+    margin-top: -30px;
 
-.stats__similar-route_text {
-    font-size: 12px;
-}
-
-.stats__average-cost_number {
-    font-size: 36px;
-}
-
-.stats__average-cost_symbol {
-    font-size: 16px;
-}
-
-.stats__average-cost_text {
-    font-size: 12px;
-}
-
-.stats__comfort_number {
-    font-size: 36px;
-}
-
-.stats__comfort_symbol {
-    font-size: 36px;
-}
-
-.stats__comfort_text {
-    font-size: 12px;
 }
