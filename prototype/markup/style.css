@@ -350,23 +350,25 @@ a:hover {
 
 /** BEGIN .stats **/
 
-.stats__value {
+.stats__item {
     display: inline-block;
     vertical-align: top;
-    margin-right: 30px;
 }
 
-.stats__value_number {
+.stats__item + .stats__item {
+    margin-left: 30px;
+}
+
+.stats-item__number {
     font-size: 36px;
+    display: inline-block;
 }
 
-.stats__value_text {
+.stats-item__text {
     font-size: 12px;
 }
 
-.stats__value_symbol {
-    font-size: 25px;
-    margin-left: 40px;
-    margin-top: -30px;
-
+.stats-item__symbol {
+    font-size: 18px;
+    display: inline-block;
 }
