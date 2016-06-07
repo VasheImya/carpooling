@@ -147,6 +147,29 @@ a:hover {
     background: green;
 }
 
+.trip-search__container {
+    box-sizing: border-box;
+    width: 252px;
+    height: 40px;
+    background: #fff;
+    border: 1px #000 solid;
+    -webkit-font-smoothing: antialiased;
+    float: left;
+}
+
+.trip-search__name {
+    font-size: 15px;
+    color: #858585;
+    font-weight: 200;
+}
+
+.trip_search__input {
+    float: right;
+    width: 200px;
+    height: 40px;
+    cursor: text;
+}
+
 .trip-search__spinner {
     margin: 20px 0;
 }
