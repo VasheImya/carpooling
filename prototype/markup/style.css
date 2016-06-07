@@ -399,11 +399,6 @@ a:hover {
 .stats__item {
     display: inline-block;
     vertical-align: top;
-    cursor: pointer;
-}
-
-.stats__item:hover {
-    color: #d00;
 }
 
 .stats__item + .stats__item {
