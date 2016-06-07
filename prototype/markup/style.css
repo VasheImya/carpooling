@@ -348,46 +348,49 @@ a:hover {
 
 /** END   .promo **/
 
-.words {
-	width: 960px;
-	height: 48px;
-	margin-top: -70px;
-	position: absolute;
+/** BEGIN .stats **/
 
+.stats {
+    display: inline-block;
+    vertical-align: top;
 }
 
-.words ul {
-	padding-left: 80px;
-	overflow: hidden;
-	list-style-type: none;
+.stats__driver_number {
+    font-size: 36px;
 }
 
-.words ul li {
-	float: left;
-	font-size: 13px;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	margin-right: 22px;
-	color: white;
+.stats__driver_text {
+    font-size: 12px;
 }
 
-.numbers {
-	width: 960px;
-	height: 48px;
-	margin-top: -115px;
-	position: absolute;
-
+.stats__similar-route_number {
+    font-size: 36px;
 }
 
-.numbers ul {
-	padding-left: 80px;
-	overflow: hidden;
-	list-style-type: none;
+.stats__similar-route_text {
+    font-size: 12px;
 }
 
-.numbers ul li {
-	float: left;
-	font-size: 40px;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	margin-right: 60px;
-	color: white;
+.stats__average-cost_number {
+    font-size: 36px;
+}
+
+.stats__average-cost_symbol {
+    font-size: 16px;
+}
+
+.stats__average-cost_text {
+    font-size: 12px;
+}
+
+.stats__comfort_number {
+    font-size: 36px;
+}
+
+.stats__comfort_symbol {
+    font-size: 36px;
+}
+
+.stats__comfort_text {
+    font-size: 12px;
 }
