@@ -144,53 +144,20 @@ a:hover {
 
 .trip-search__form {
     height: 40px;
-    background: green;
     display: flex;
-    justify-content: flex-start;
 }
 
-.trip-search__container_place {
-    box-sizing: border-box;
-    width: 275px;
-    height: 40px;
-    background: #fff;
-    border: 1px #000 solid;
-    display: flex;
-    justify-content: space-between;
+.trip-search__field_place {
+    flex-basis: 25%;
+    flex-grow: 2;
 }
 
-.trip-search__inscription {
-    margin: 10px 5px;
-    font-size: 15px;
-    color: #858585;
-    font-weight: 200;
-    display: inline-block;
-}
-
-.trip-search__input {
-    width: 245px;
-    border: 0;
-    display: inline-block;
-}
-
-.trip-search__container_date {
-    box-sizing: border-box;
+.trip-search__field_date {
     width: 152px;
-    height: 40px;
-    background: #fff;
-    border: 1px #000 solid;
-    display: flex;
-    justify-content: space-around;
 }
 
-.trip-search__container_more {
-    box-sizing: border-box;
-    width: 98px;
-    height: 40px;
-    background: #fff;
-    border: 1px #000 solid;
-    display: flex;
-    justify-content: space-around;
+.trip-search__field_person {
+    width: 100px;
 }
 
 .trip-search__spinner {
@@ -214,7 +181,6 @@ a:hover {
     margin-right: 22px;
     height: 80px;
     float: left;
-    background: green;
     width: calc(100% - 280px);
 }
 
@@ -399,6 +365,7 @@ a:hover {
 .stats__item {
     display: inline-block;
     vertical-align: top;
+    -webkit-font-smoothing: antialiased;
 }
 
 .stats__item + .stats__item {
@@ -418,3 +385,34 @@ a:hover {
     font-size: 18px;
     display: inline-block;
 }
+
+/** BEGIN .field **/
+
+.field {
+    display: flex;
+    background: #fff;
+    border: 1px rgba(0,0,0,.65) solid;
+    cursor: text;
+}
+
+.field__placeholder {
+    padding: 0 6px 0 12px;
+    color: #858585;
+    font-weight: 200;
+    line-height: 38px;
+}
+
+.field__input {
+    padding: 0 12px;
+    font-size: 14px;
+}
+
+.field__input:focus {
+    outline: none;
+}
+
+.field__placeholder + .field__input {
+    padding-left: 0;
+}
+
+/** END   .field **/
