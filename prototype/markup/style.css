@@ -75,6 +75,16 @@ a:hover {
     clear: both;
 }
 
+.header__left-side {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header__right-side {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .header__logo {
     display: inline-block;
     vertical-align: middle;
@@ -91,12 +101,9 @@ a:hover {
     background: green;
 }
 
-.header__side {
-    float: right;
-}
-
 .header__menu {
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
 }
 
 .header__menu-item {
@@ -126,7 +133,6 @@ a:hover {
     border: 2px #fff solid;
     margin: -1px;
 }
-
 
 
 /** BEGIN .trip-search **/
