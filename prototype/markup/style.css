@@ -145,29 +145,52 @@ a:hover {
 .trip-search__form {
     height: 40px;
     background: green;
+    display: flex;
+    justify-content: flex-start;
 }
 
-.trip-search__container {
+.trip-search__container_place {
     box-sizing: border-box;
-    width: 252px;
+    width: 275px;
     height: 40px;
     background: #fff;
     border: 1px #000 solid;
-    -webkit-font-smoothing: antialiased;
-    float: left;
+    display: flex;
+    justify-content: space-between;
 }
 
-.trip-search__name {
+.trip-search__inscription {
+    margin: 10px 5px;
     font-size: 15px;
     color: #858585;
     font-weight: 200;
+    display: inline-block;
 }
 
-.trip_search__input {
-    float: right;
-    width: 200px;
+.trip-search__input {
+    width: 245px;
+    border: 0;
+    display: inline-block;
+}
+
+.trip-search__container_date {
+    box-sizing: border-box;
+    width: 152px;
     height: 40px;
-    cursor: text;
+    background: #fff;
+    border: 1px #000 solid;
+    display: flex;
+    justify-content: space-around;
+}
+
+.trip-search__container_more {
+    box-sizing: border-box;
+    width: 98px;
+    height: 40px;
+    background: #fff;
+    border: 1px #000 solid;
+    display: flex;
+    justify-content: space-around;
 }
 
 .trip-search__spinner {
@@ -376,6 +399,11 @@ a:hover {
 .stats__item {
     display: inline-block;
     vertical-align: top;
+    cursor: pointer;
+}
+
+.stats__item:hover {
+    color: #d00;
 }
 
 .stats__item + .stats__item {
