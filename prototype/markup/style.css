@@ -66,6 +66,9 @@ a:hover {
 .header {
     min-height: 50px;
     padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header:after {
@@ -75,14 +78,19 @@ a:hover {
     clear: both;
 }
 
+.header__side {
+    flex-basis: 100%;
+}
+
 .header__left-side {
-    display: flex;
-    justify-content: flex-start;
+    margin-left: 30px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .header__right-side {
-    display: flex;
-    justify-content: flex-end;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .header__logo {
@@ -90,9 +98,6 @@ a:hover {
     vertical-align: middle;
 }
 
-.header__logo + .header__menu-item {
-    margin-left: 30px;
-}
 
 .logo {
     display: block;
@@ -102,8 +107,7 @@ a:hover {
 }
 
 .header__menu {
-    display: flex;
-    justify-content: space-between;
+    display: inline-block;
 }
 
 .header__menu-item {
