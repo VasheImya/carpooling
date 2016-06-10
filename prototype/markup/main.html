@@ -3,6 +3,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Главная</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
         <link href="../../node_modules/app-reset/app-reset.css" type="text/css" rel="stylesheet" />
         <link href="style.css" type="text/css" rel="stylesheet" />
     </head>
@@ -30,7 +33,18 @@
             </div>
             <div class="promo wrapper">
                 <div class="promo__inner">
-                    <div class="promo__big-text">Куда едем?</div>
+                    <div id="promo__big-text" class="promo__big-text"></div>
+                    <script type="text/babel">
+                        var WhereGo = React.createClass({
+                            render: function() {
+                                return <div>Куда едем?</div>;
+                            }
+                        });
+                        ReactDOM.render(
+                                <WhereGo />,
+                                document.getElementById("promo__big-text")
+                        );
+                    </script>
                     <div class="promo__small-text">Сотни интересных мест ждут тебя</div>
                 </div>
             </div>
