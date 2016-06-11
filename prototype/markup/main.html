@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org//1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Главная</title>
+        <link href="../../node_modules/app-reset/app-reset.css" type="text/css" rel="stylesheet" />
+        <link href="style.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="main">
+            <div class="header">
+                <div class="header__logo">
+                    <a href="#" class="logo"></a>
+                </div>
+                <div class="header__side">
+                    <div class="header__left-side">
+                        <span class="header__menu-item"><a href="#">Самое интересное</a></span>
+                    </div>
+                    <div class="header__right-side">
+                        <ul class="header__menu">
+                            <li class="header__menu-item"><a href="#">Сообщения</a></li>
+                            <li class="header__menu-item"><a href="#">Мои поездки</a></li>
+                            <li class="header__menu-item"><a href="#">Помощь</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header__profile">
+                    <span class="header__avatar"></span>
+                </div>
+            </div>
+            <div class="promo wrapper">
+                <div class="promo__inner">
+                    <div class="promo__big-text">Куда едем?</div>
+                    <div class="promo__small-text">Сотни интересных мест ждут тебя</div>
+                </div>
+            </div>
+            <div class="trip-search">
+                <div class="trip-search__inner wrapper">
+                    <div class="trip-search__form">
+                        <label class="trip-search__field_place field">
+                            <span class="field__placeholder">из</span>
+                            <input class="field__input"/>
+                        </label>
+                        <label class="trip-search__field_place field">
+                            <span class="field__placeholder">в</span>
+                            <input class="field__input"/>
+                        </label>
+                        <label class="trip-search__field_date field">
+                            <input class="field__input"/>
+                        </label>
+                        <label class="trip-search__field_person field">
+                            <input class="field__input"/>
+                        </label>
+                    </div>
+                    <div class="spinner trip-search__spinner">
+                        <div class="spinner__element">
+                            <i class="spinner__dot"></i><i class="spinner__dot"></i><i class="spinner__dot"></i><i class="spinner__dot"></i><i class="spinner__dot"></i>
+                        </div>
+                    </div>
+                    <div class="trip-search__data">
+                        <div class="stats trip-search__stats">
+                            <div class="stats__item stats-item">
+                                <div class="stats-item__number">5</div>
+                                <div class="stats-item__text">водителей</div>
+                            </div>
+                            <div class="stats__item stats-item">
+                                <div class="stats-item__number">23</div>
+                                <div class="stats-item__text">похожих<br> направления</div>
+                            </div>
+                            <div class="stats__item stats-item">
+                                <div class="stats-item__number">40</div>
+                                <div class="stats-item__symbol">$</div>
+                                <div class="stats-item__text">средняя<br> стоимость</div>
+                            </div>
+                            <div class="stats__item stats-item">
+                                <div class="stats-item__number">4</div>
+                                <div class="stats-item__symbol">+</div>
+                                <div class="stats-item__text">комфорт</div>
+                            </div>
+                        </div>
+                        <button class="trip-search__go-btn">Поехали!</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </body>
+</html>
