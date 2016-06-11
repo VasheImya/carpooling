@@ -5,3 +5,6 @@ dist/
 *.swo
 *.swp
 npm-debug.log
+*.log
+build/
+.git/
