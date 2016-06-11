@@ -4,9 +4,9 @@ import React                      from 'react';
 import { renderToString }         from 'react-dom/server';
 import { RoutingContext, match }  from 'react-router';
 import createLocation             from 'history/lib/createLocation';
-import routes                     from 'routes';
+import routes                     from './src/shared/routes';
 import { Provider }               from 'react-redux';
-import * as reducers              from 'reducers';
+import * as reducers              from './src/shared/reducers';
 import promiseMiddleware          from './src/shared/lib/promiseMiddleware';
 import fetchComponentData         from './src/shared/lib/fetchComponentData';
 import { createStore,
