@@ -1,15 +1,16 @@
 var path    = require('path');
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry:  [
-        'webpack-dev-server/client?http://localhost:8080/',
-        'webpack/hot/only-dev-server',
-        //'./src/client'
+        './src/client'
     ],
     output: {
-        path:     path.join(__dirname, 'dist'),
-        filename: 'bundle.js'
+        path:       path.join(__dirname, 'dist'),
+        publicPath: '/dist/',
+        filename:   'bundle.js'
     },
     resolve: {
         modulesDirectories: ['node_modules', 'shared'],
@@ -20,13 +21,45 @@ module.exports = {
             {
                 test:    /\.jsx?$/,
                 exclude: /node_modules/,
-                loaders: ['react-hot', 'babel']
+                loader: 'babel',
+                query: {
+                    presets: ['react', 'es2015'],
+                    plugins: [
+                        ['transform-object-rest-spread'],
+                        ['transform-class-properties'],
+                        ['transform-decorators-legacy'],
+                        [
+                            'react-transform',
+                            {
+                                transforms: [
+                                    {
+                                        transform: 'react-transform-hmr',
+                                        imports:    ['react'],
+                                        locals:     ['module']
+                                    }
+                                ]
+                            }
+                        ]
+                    ]
+                }
+            },
+            {
+                test:    /(\.less|\.css)$/,
+                loader: ExtractTextPlugin.extract("style", "css!less!postcss")
+            },
+            {
+                test: /\.png$/,
+                loader: 'url?limit=100000'
             }
         ]
     },
+    postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoErrorsPlugin(),
+        new ExtractTextPlugin("app.css", {
+            allChunks: true
+        })
     ],
     devtool: 'inline-source-map',
     devServer: {

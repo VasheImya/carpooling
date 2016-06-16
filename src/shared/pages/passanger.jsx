@@ -1,0 +1,9 @@
+import React from 'react';
+
+export default class AppView extends React.Component {
+    render() {
+        return (
+            <div>Passanger</div>
+        );
+    }
+}

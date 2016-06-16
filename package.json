@@ -4,9 +4,8 @@
   "description": "Carpooling webapp",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production NODE_PATH=$NODE_PATH:./src/shared node --harmony .",
-    "dev": "NODE_PATH=$NODE_PATH:./src/shared node --harmony .",
-    "build": "webpack --progress --color -p --config webpack.prod.config.js"
+    "start": "NODE_PATH=$NODE_PATH:./src/shared node --harmony .",
+    "build": "webpack --progress --color -p --display-error-details --display-cached"
   },
   "repository": {
     "type": "git",
@@ -43,15 +42,27 @@
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.1",
+    "react-router-redux": "^4.0.5",
     "redux": "3.5.2",
+    "redux-thunk": "^2.1.0",
+    "scroll-behavior": "^0.4.0",
     "webpack": "^1.13.1"
   },
   "devDependencies": {
+    "autoprefixer": "^6.3.6",
     "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
+    "css-loader": "^0.23.1",
     "eslint": "^2.11.1",
     "eslint-plugin-react": "^5.1.1",
-    "react-hot-loader": "git@github.com:gaearon/react-hot-loader.git#next",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "postcss-loader": "^0.9.1",
+    "react-hot-loader": "^3.0.0-beta.1",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack-dev-server": "^1.14.1",
     "webpack-hot-middleware": "^2.10.0"
   }

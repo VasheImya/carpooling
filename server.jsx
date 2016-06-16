@@ -1,32 +1,26 @@
-import _                          from 'lodash';
-import express                    from 'express';
-import React                      from 'react';
-import { renderToString }         from 'react-dom/server';
-import { RoutingContext, match }  from 'react-router';
-import createLocation             from 'history/lib/createLocation';
-import routes                     from 'routes';
-import { Provider }               from 'react-redux';
-import * as reducers              from 'reducers';
-import promiseMiddleware          from './src/shared/lib/promiseMiddleware';
-import fetchComponentData         from './src/shared/lib/fetchComponentData';
-import { createStore,
-         combineReducers,
-         applyMiddleware }        from 'redux';
-import path                       from 'path';
-import * as appRoutesInitializers from './src/server/routes';
+import path from 'path';
+import express from 'express';
+import webpack from 'webpack';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackConfig from './webpack.config';
+
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import { match } from 'react-router';
+import { store, history, createProvider } from './src/shared/provider';
+import routes from './src/shared/routes';
 
 const app = express();
 
-if (process.env.NODE_ENV !== 'production') {
-    require('./webpack.dev').default(app);
-}
+app.use(webpackDevMiddleware(webpack(webpackConfig), {
+    publicPath: webpackConfig.output.publicPath,
+    stats: { colors: true  }
+}));
 
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use('/dist', express.static(__dirname + '/dist'));
 
-app.use((req, res) => {
+app.use(function(req, res) {
     const location = createLocation(req.url);
-    const reducer  = combineReducers(reducers);
-    const store    = applyMiddleware(promiseMiddleware)(createStore)(reducer);
 
     match({ routes, location }, (err, redirectLocation, renderProps) => {
         if(err) {
@@ -38,30 +32,26 @@ app.use((req, res) => {
             return res.status(404).end('Not found');
 
         function renderView() {
-            const InitialView = (
-                <Provider store={store}>
-                    <RoutingContext {...renderProps} />
-                </Provider>
-            );
+            const InitialView = createProvider(renderProps);
 
             const componentHTML = renderToString(InitialView);
-
             const initialState = store.getState();
 
             const HTML = `
                 <!DOCTYPE html>
                 <html>
                     <head>
-                    <meta charset="utf-8">
-                    <title>Carpooling</title>
+                        <meta charset="utf-8">
+                        <title>Carpooling</title>
 
-                    <script>
-                        window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
-                    </script>
+                        <script>
+                            window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
+                        </script>
+                        <link href="/app.css" type="text/css" rel="stylesheet" />
                     </head>
                     <body>
-                    <div id="react-view">${componentHTML}</div>
-                    <script type="application/javascript" src="/bundle.js"></script>
+                        <div id="react-view">${componentHTML}</div>
+                        <script type="application/javascript" src="/bundle.js"></script>
                     </body>
                 </html>
             `;
@@ -69,13 +59,8 @@ app.use((req, res) => {
             return HTML;
         }
 
-        fetchComponentData(store.dispatch, renderProps.components, renderProps.params)
-            .then(renderView)
-            .then(html => res.end(html))
-            .catch(err => res.end(err.message));
+        res.end(renderView());
     });
 });
-
-_.forEach(appRoutesInitializers, route => (_.isFunction(route) && route(app) || null));
 
 export default app;
