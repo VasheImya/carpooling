@@ -1,27 +1,22 @@
 import React from 'react';
 
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
-import { routerReducer, routerMiddleware } from 'react-router-redux';
 import thunkMiddleware from 'redux-thunk';
 import * as reducers from './reducers';
 
-export function configureStore(history, initialState) {
+export function configureStore(initialState) {
 
-  const reducer = combineReducers({
-    ...reducers,
-    routing: routerReducer
-  })
+  const reducer = combineReducers(reducers);
 
   const store = createStore(
     reducer,
     initialState,
     compose(
       applyMiddleware(
-        thunkMiddleware,
-        routerMiddleware(history)
+        thunkMiddleware
       )
     )
-  )
+  );
 
-  return store
+  return store;
 }

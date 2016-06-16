@@ -2,8 +2,9 @@ import path from 'path';
 import express from 'express';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from './webpack.config';
-
+import createLocation from 'history/lib/createLocation';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match } from 'react-router';
@@ -12,10 +13,14 @@ import routes from './src/shared/routes';
 
 const app = express();
 
-app.use(webpackDevMiddleware(webpack(webpackConfig), {
+const compiler = webpack(webpackConfig);
+
+app.use(webpackDevMiddleware(compiler, {
     publicPath: webpackConfig.output.publicPath,
     stats: { colors: true  }
 }));
+
+app.use(webpackHotMiddleware(compiler));
 
 app.use('/dist', express.static(__dirname + '/dist'));
 
@@ -47,11 +52,11 @@ app.use(function(req, res) {
                         <script>
                             window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
                         </script>
-                        <link href="/app.css" type="text/css" rel="stylesheet" />
+                        <link href="/assets/app.css" type="text/css" rel="stylesheet" />
                     </head>
                     <body>
-                        <div id="react-view">${componentHTML}</div>
-                        <script type="application/javascript" src="/bundle.js"></script>
+                        <div id="react-view" class="main">${componentHTML}</div>
+                        <script type="application/javascript" src="/assets/bundle.js"></script>
                     </body>
                 </html>
             `;

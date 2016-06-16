@@ -5,11 +5,12 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry:  [
+        'webpack-hot-middleware/client',
         './src/client'
     ],
     output: {
         path:       path.join(__dirname, 'dist'),
-        publicPath: '/dist/',
+        publicPath: '/assets/',
         filename:   'bundle.js'
     },
     resolve: {
