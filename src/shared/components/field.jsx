@@ -12,19 +12,18 @@ export default class Field extends Component {
     }
 
     componentDidMount() {
-        this.setState({ value: this.refs.field.getDOMNode().value || 0 });
+        this.setState({ value: this.refs.field.value || '' });
     }
 
-    onFocus() {
+    _handleFocus() {
         this.setState({ isFocused: true });
     }
 
-    onBlur() {
+    _handleBlur() {
         this.setState({ isFocused: false });
     }
 
-    onChange(value) {
-        console.log(value);
+    _handleChange(value) {
         this.setState({ value });
         this.props.onChange && this.props.onChange(value);
     }
@@ -36,9 +35,9 @@ export default class Field extends Component {
                 className={`${baseClassName}__input`}
                 type="text"
                 value={this.state.value}
-                onChange={value => this.onChange(value)}
-                onBlur={() => this.onBlur()}
-                onFocus={() => this.onFocus()}
+                onChange={e => this._handleChange(e.target.value)}
+                onBlur={() => this._handleBlur()}
+                onFocus={() => this._handleFocus()}
             />
         );
     }

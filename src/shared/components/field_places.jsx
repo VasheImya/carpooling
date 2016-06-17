@@ -7,6 +7,10 @@ export default class FieldPlaces extends Field {
         super(props, context);
     }
 
+    componentDidMount() {
+        this.setState({ value: this.refs.field.refs.input.value || '' });
+    }
+
     getInput(baseClassName) {
         const className = `${baseClassName}__input`;
 
@@ -14,10 +18,10 @@ export default class FieldPlaces extends Field {
             <div className={className}>
                 <Autocomplete
                     ref="field"
-                    onPlaceSelected={place => this.onChange(place)}
+                    onPlaceSelected={place => this._handleChange(place.place_id)}
                     className={className}
-                    onFocus={() => this.onFocus()}
-                    onBlur={() => this.onBlur()}
+                    onFocus={() => this._handleFocus()}
+                    onBlur={() => this._handleBlur()}
                 />
             </div>
         );
