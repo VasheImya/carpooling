@@ -4,7 +4,7 @@
   "description": "Carpooling webapp",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_PATH=$NODE_PATH:./src/shared node --harmony .",
+    "start": "node --harmony .",
     "build": "webpack --progress --color -p --display-error-details --display-cached"
   },
   "repository": {
