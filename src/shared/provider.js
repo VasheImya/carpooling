@@ -6,7 +6,7 @@ import { Router, RouterContext } from 'react-router';
 import { configureStore } from './store';
 import routes from './routes';
 
-export const store = configureStore();
+export const store = configureStore({});
 
 export const createProvider = renderProps => (
   <Provider store={store}>
