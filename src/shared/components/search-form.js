@@ -3,6 +3,7 @@ import Loader from './loader';
 import Field from './field';
 import FieldPlaces from './field_places';
 import FieldDate from './field_date';
+import FieldSelect from './field_select';
 
 function SearchForm ({ isLoading }) {
     const spinner = isLoading ?
@@ -22,7 +23,15 @@ function SearchForm ({ isLoading }) {
                         className="trip-search__field_place"
                     />
                     <FieldDate className="trip-search__field_date" />
-                    <Field className="trip-search__field_person" />
+                    <FieldSelect
+                        className="trip-search__field_person"
+                        options={[
+                            { value: 1, label: 'Один' },
+                            { value: 2, label: 'Вдвоем' },
+                            { value: 3, label: 'Втроем' },
+                            { value: 4, label: 'Вчетвером' }
+                        ]}
+                    />
                 </div>
                 {spinner}
                 <div className="trip-search__data">
