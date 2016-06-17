@@ -52,6 +52,7 @@ app.use(function(req, res) {
                         <script>
                             window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
                         </script>
+                        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjcS5L1aQZ8xP0Rc7qzD08QpgTMtv2SBE&libraries=places"></script>
                         <link href="/assets/app.css" type="text/css" rel="stylesheet" />
                     </head>
                     <body>

@@ -1,5 +1,7 @@
 import React from 'react';
 import Loader from './loader';
+import Field from './field';
+import FieldPlaces from './field_places';
 
 function SearchForm ({ isLoading }) {
     const spinner = isLoading ?
@@ -10,20 +12,16 @@ function SearchForm ({ isLoading }) {
         <div className="trip-search">
             <div className="trip-search__inner wrapper">
                 <div className="trip-search__form">
-                    <label className="trip-search__field_place field">
-                        <span className="field__placeholder">из</span>
-                        <input className="field__input"/>
-                    </label>
-                    <label className="trip-search__field_place field">
-                        <span className="field__placeholder">в</span>
-                        <input className="field__input"/>
-                    </label>
-                    <label className="trip-search__field_date field">
-                        <input className="field__input"/>
-                    </label>
-                    <label className="trip-search__field_person field">
-                        <input className="field__input"/>
-                    </label>
+                    <FieldPlaces
+                        placeholder="из"
+                        className="trip-search__field_place"
+                    />
+                    <FieldPlaces
+                        placeholder="в"
+                        className="trip-search__field_place"
+                    />
+                    <Field className="trip-search__field_date" />
+                    <Field className="trip-search__field_person" />
                 </div>
                 {spinner}
                 <div className="trip-search__data">
