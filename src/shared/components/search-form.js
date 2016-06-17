@@ -2,6 +2,7 @@ import React from 'react';
 import Loader from './loader';
 import Field from './field';
 import FieldPlaces from './field_places';
+import FieldDate from './field_date';
 
 function SearchForm ({ isLoading }) {
     const spinner = isLoading ?
@@ -20,7 +21,7 @@ function SearchForm ({ isLoading }) {
                         placeholder="в"
                         className="trip-search__field_place"
                     />
-                    <Field className="trip-search__field_date" />
+                    <FieldDate className="trip-search__field_date" />
                     <Field className="trip-search__field_person" />
                 </div>
                 {spinner}
