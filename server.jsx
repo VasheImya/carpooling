@@ -10,6 +10,7 @@ import { renderToString } from 'react-dom/server';
 import { match } from 'react-router';
 import { store, history, createProvider } from './src/shared/provider';
 import routes from './src/shared/routes';
+import useRoutes from './src/server/routes';
 
 const app = express();
 
@@ -23,6 +24,8 @@ app.use(webpackDevMiddleware(compiler, {
 app.use(webpackHotMiddleware(compiler));
 
 app.use('/dist', express.static(__dirname + '/dist'));
+
+useRoutes(app);
 
 app.use(function(req, res) {
     const location = createLocation(req.url);
